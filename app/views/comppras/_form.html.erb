@@ -1,0 +1,32 @@
+<%= form_with(model: comppra, local: true) do |form| %>
+  <% if comppra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comppra.errors.count, "error") %> prohibited this comppra from being saved:</h2>
+
+      <ul>
+      <% comppra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fecha_compra %>
+    <%= form.date_select :fecha_compra, id: :comppra_fecha_compra %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monto %>
+    <%= form.text_field :monto, id: :comppra_monto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cliente %>
+    <%= form.text_area :cliente, id: :comppra_cliente %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

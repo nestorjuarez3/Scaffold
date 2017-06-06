@@ -1,0 +1,2 @@
+class Comppra < ApplicationRecord
+end
